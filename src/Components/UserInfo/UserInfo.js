@@ -33,12 +33,13 @@ const UserInfo = () => {
 
     const handleSubmit = (e) => {
 
+
         const postRequest = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user)
         };
-        fetch('http://localhost:5000/users', postRequest)
+        fetch('http://localhost:5000/addUsers', postRequest)
             .then(response => response.json())
             .then(data => {
                console.log(data);

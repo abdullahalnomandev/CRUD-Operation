@@ -1,30 +1,19 @@
 import React from 'react';
-import {Form, Table} from 'react-bootstrap'
+import { useState } from 'react';
+import {Form, Table} from 'react-bootstrap';
+import data from './FakeData';
+import TableRow from './TableRow';
+
+
 
 const TableList = () => {
 
-    let data = [
-        {
-            moduleName: 'Configuration',
-            activityName: 'Item Category',
-            isCreate: false,
-            isView: false,
-            isEdit: false,
-            isDelete: false,
-            isApprove: false,
-        },
-        {
-            moduleName: 'Configuration',
-            activityName: "Item",
-            isCreate: false,
-            isView: false,
-            isEdit: false,
-            isDelete: false,
-            isApprove: false,
-        }
-    ]
 
 
+    const [dataInfo,setInfoData]=useState(data)
+
+
+    
     return (
         <div className="container mt-5">
             <h3 className="text-primary">#Task 2</h3>
@@ -43,16 +32,7 @@ const TableList = () => {
                 <tbody>
 
                     {
-                        data.map((data) => <tr>
-                            <td >{data.moduleName}</td>
-                            <td>{data.activityName}</td>
-                            <td> <Form.Check type="checkbox" /> </td>
-                            <td> <Form.Check type="checkbox" /> </td>
-                            <td> <Form.Check type="checkbox" /> </td>
-                            <td> <Form.Check type="checkbox" /> </td>
-                            <td> <Form.Check type="checkbox" /> </td>
-                           
-                        </tr>)
+                        dataInfo.map((data) => <TableRow data ={data} /> )
 
                     }
 
