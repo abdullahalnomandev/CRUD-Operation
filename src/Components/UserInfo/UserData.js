@@ -6,9 +6,7 @@ const UserData = ({ users }) => {
 
     const deleteUser = (e, _id) => {
 
-        console.log(_id);
-
-        fetch(`http://localhost:5000/delete/${_id}`, {
+        fetch(`https://guarded-beach-06323.herokuapp.com/delete/${_id}`, {
             method: 'DELETE',
         })
             .then(res => res.text())
@@ -17,8 +15,6 @@ const UserData = ({ users }) => {
                     e.target.parentNode.parentNode.style.display="none";
                 }
             })
-
-        console.log(e.target.parentNode.parentNode);
     }
 
     return (
@@ -43,13 +39,9 @@ const UserData = ({ users }) => {
                                 className="btn-danger px-2 rounded py-2"
                                 onClick={(e) => deleteUser(e,user._id)}
 
-
                             >Delete</button> </td>
-
                         </tr>)
-
                     }
-
 
                 </tbody>
             </Table>

@@ -1,19 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-import {Form, Table} from 'react-bootstrap';
+import { Table} from 'react-bootstrap';
 import data from './FakeData';
 import TableRow from './TableRow';
 
-
-
 const TableList = () => {
-
-
 
     const [dataInfo,setInfoData]=useState(data)
 
-
-    
     return (
         <div className="container mt-5">
             <h3 className="text-primary">#Task 2</h3>
@@ -30,12 +24,10 @@ const TableList = () => {
                     </tr>
                 </thead >
                 <tbody>
-
                     {
                         dataInfo.map((data) => <TableRow data ={data} /> )
 
                     }
-
 
                 </tbody>
             </Table>

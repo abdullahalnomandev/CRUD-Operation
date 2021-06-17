@@ -39,18 +39,17 @@ const UserInfo = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user)
         };
-        fetch('http://localhost:5000/addUsers', postRequest)
+        fetch('https://guarded-beach-06323.herokuapp.com/addUsers', postRequest)
             .then(response => response.json())
             .then(data => {
-               console.log(data);
+                console.log(data);
             })
     }
-
 
     const [users, setUsers] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/userInfo')
+        fetch('https://guarded-beach-06323.herokuapp.com/userInfo')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, []);
@@ -75,7 +74,7 @@ const UserInfo = () => {
                 </form>
             </div>
 
-        < UserData users={users}/>
+            < UserData users={users} />
 
         </>
     );

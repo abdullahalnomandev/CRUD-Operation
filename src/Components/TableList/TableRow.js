@@ -7,7 +7,6 @@ function TableRow(props) {
   const [data,setData]=useState(props.data);
 
   const handleEvent =()=>{
-
     const updateData = {...data,isCreate:true}
         setData(updateData) 
     console.log(updateData);
